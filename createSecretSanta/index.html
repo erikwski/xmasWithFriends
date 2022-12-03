@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-hidden secondScreen">
+  <head>
+    <!--- basic page needs
+        ================================================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secret Santa</title>
+    <!-- SEO TAG
+        ================================================== -->
+    <meta
+      name="description"
+      content="Organize with your friends the famous Secret Santa game here, configure group, insert the name and mail of the partecipants and all is ready"
+    />
+    <meta
+      name="keywords"
+      content="secret santa christmas xmas present presents challenge with friends "
+    />
+    <meta name="author" content="erikwski" />
+
+    <!-- icon of website
+        ================================================== -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../websiteIcon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../websiteIcon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../websiteIcon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../websiteIcon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="../websiteIcon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="shortcut icon" href="../websiteIcon/favicon.ico" />
+
+    <!-- STYLE DEL SITO E FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Quicksand:wght@400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="../style/taiwind.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+    <link rel="stylesheet" type="text/css" href="../style/background.css" />
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <section id="background" class="z-[-1]">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+  </section>
+  <section id="decoration" class="z-[-1] fixed top-0 left-0 w-full h-[100vh]">
+    <img
+      src="../img/backgroundLeft.png"
+      class="w-[200px] absolute bottom-0 left-0 hidden lg:block"
+    />
+    <img
+      src="../img/backgroundRight.png"
+      class="w-[200px] absolute bottom-0 right-0"
+    />
+  </section>
+  <body class="overflow-hidden">
+    <div id="loadingIn">
+      <img alt="babbo natale pazzo sgravato" src="../img/loadingImage.png" />
+    </div>
+    <main
+      id="container"
+      class="max-w-[95%] md:max-w-[75%] mx-auto flex flex-col z-10 p-4"
+    >
+      <section id="title" class="py-3 flex items-center justify-around">
+        <a
+          href="#"
+          class="hover:scale-110 transition-all duration-500 ease-in-out flex justify-center items-center text-white"
+        >
+          <span class="text-[48px] md:text-[64px] mr-4">Secret</span>
+          <img alt="logo" src="../logo.png" width="64" height="64" />
+          <span class="text-[48px] md:text-[64px] ml-4">Santa</span>
+        </a>
+      </section>
+      <section>
+        <form class="w-full max-w-lg mx-auto">
+          <div class="flex flex-wrap mb-6 userContainer" id="contOrganizer">
+            <h4 class="w-full text-center">Details of the organizer</h4>
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 checkName">
+              <label
+                class="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
+                for="grid-first-name"
+              >
+                Name
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded border-red-500 py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white"
+                id="nameCreator"
+                type="text"
+                placeholder="Your name"
+                name="name"
+              />
+              <p class="text-red-500 text-sm italic">Minimum 3 characters</p>
+            </div>
+            <div class="w-full md:w-1/2 px-3 checkMail">
+              <label
+                class="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
+                for="grid-last-name"
+              >
+                Mail
+              </label>
+              <input
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border mb-1 border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="mailCreator"
+                type="email"
+                placeholder="sample@gmail.com"
+                name="email"
+              />
+              <p class="text-red-500 text-sm italic">Insert a correct mail</p>
+            </div>
+          </div>
+          <div
+            id="containerPartecipanti"
+            class="w-full flex flex-col items-center"
+            style="display: none"
+          >
+            <h4 class="w-full text-center">PARTECIPANTS</h4>
+            <div class="flex flex-wrap mb-6 userContainer">
+              <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0 checkName">
+                <label
+                  class="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
+                  for="grid-first-name"
+                >
+                  Name
+                </label>
+                <input
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded border-red-500 py-3 px-4 mb-1 leading-tight focus:outline-none focus:bg-white"
+                  id="nameFirstPartecipant"
+                  type="text"
+                  placeholder="Your name"
+                  name="name"
+                />
+                <p class="text-red-500 text-sm italic">Minimum 3 characters</p>
+              </div>
+              <div class="w-full md:w-1/2 px-3 checkMail">
+                <label
+                  class="block uppercase tracking-wide text-gray-300 text-xs font-bold mb-2"
+                  for="grid-last-name"
+                >
+                  Mail
+                </label>
+                <input
+                  class="appearance-none block w-full bg-gray-200 text-gray-700 border mb-1 border-red-500 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                  id="mailFirstPartecipant"
+                  type="email"
+                  placeholder="sample@gmail.com"
+                  name="email"
+                />
+                <p class="text-red-500 text-sm italic">Insert a correct mail</p>
+              </div>
+            </div>
+            <div id="buttonAddContainer">
+              <button class="rounded-full flex items-center justify-center">
+                <img
+                  src="../img/addButton.png"
+                  alt="add background"
+                  width="64"
+                  height="64"
+                />
+              </button>
+            </div>
+            <div id="buttonConfirmContainer" class="mt-8">
+              <button
+                class="rounded-l px-6 py-4 flex items-center justify-around mx-auto font-bold text-[17px]"
+                id="xmasButton"
+              >
+                <img alt="buttonImg" src="../img/buttonDecoration.png" />
+                <span>CREATE YOUR PARTY</span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+  <script src="./index.js"></script>
+</html>

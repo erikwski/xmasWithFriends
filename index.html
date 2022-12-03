@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-hidden">
+  <head>
+    <!--- basic page needs
+        ================================================== -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Secret Santa</title>
+    <!-- SEO TAG
+        ================================================== -->
+    <meta
+      name="description"
+      content="Organize with your friends the famous Secret Santa game here, configure group, insert the name and mail of the partecipants and all is ready"
+    />
+    <meta
+      name="keywords"
+      content="secret santa christmas xmas present presents challenge with friends "
+    />
+    <meta name="author" content="erikwski" />
+
+    <!-- icon of website
+        ================================================== -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./websiteIcon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./websiteIcon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./websiteIcon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./websiteIcon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./websiteIcon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="shortcut icon" href="./websiteIcon/favicon.ico" />
+
+    <!-- STYLE DEL SITO E FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Quicksand:wght@400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="./style/taiwind.css" />
+    <link rel="stylesheet" type="text/css" href="./style/style.css" />
+    <link rel="stylesheet" type="text/css" href="./style/background.css" />
+
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <section id="background" class="z-[-1]">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+  </section>
+  <body class="overflow-auto">
+    <div id="loadingOut">
+      <img alt="babbo natale pazzo sgravato" src="./img/loadingImage.png" />
+    </div>
+    <main
+      id="container"
+      class="max-w-[95%] md:max-w-[75%] mx-auto min-h-[100vh] flex flex-col justify-center z-10"
+    >
+      <section id="title" class="py-3 flex items-center justify-around">
+        <a
+          href="#"
+          class="hover:scale-110 transition-all duration-500 ease-in-out flex justify-center items-center text-white"
+        >
+          <span class="text-[48px] md:text-[64px] mr-4">Secret</span>
+          <img alt="logo" src="./logo.png" width="64" height="64" />
+          <span class="text-[48px] md:text-[64px] ml-4">Santa</span>
+        </a>
+      </section>
+      <section class="p-3 pt-12 md:pt-3" id="landing">
+        <div class="text-center px-4 sm:px-6 lg:px-8 z-20">
+          <div class="flex flex-col flex-1">
+            <h2
+              class="text-[50px] sm:text-[64px] md:text-[100px] font-extrabold text-white leading-none"
+            >
+              Want to play
+              <span class="cXmasRed">Secret Santa?</span>
+            </h2>
+            <h3
+              class="block text-[40px] sm:text-[50px] md:text-[70px] leading-none mt-2"
+            >
+              The easiest way to do it
+            </h3>
+
+            <div class="lg:mt-0 lg:flex-shrink-0">
+              <div class="mt-12 inline-flex rounded-md shadow">
+                <button
+                  type="button"
+                  id="xmasButton"
+                  class="py-4 px-6 bgXmasGreen min-w-[300px] focus:ring-offset-green-800 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                >
+                  CREATE IT
+                  <img alt="buttonImg" src="./img/buttonDecoration.png" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <h3
+        class="block text-[32px] sm:text-[40px] md:text-55px] leading-none mt-7 text-center font-semibold"
+      >
+        5 simple step
+      </h3>
+      <section
+        id="howToCreate"
+        class="p-3 pt-0 flex flex-wrap justify-around"
+      ></section>
+    </main>
+    <footer></footer>
+  </body>
+  <script>
+    const howToCreate = document.getElementById("howToCreate");
+    const stepperTitle = [
+      "CREATE THE GROUP",
+      "SETTINGS",
+      "ADD YOUR FRIENDS",
+      "CONFIRM GROUP",
+      "PREPARE FOR 25th",
+    ];
+    for (let index = 0; index < 5; index++) {
+      howToCreate.innerHTML += `
+        <div class="p-3 cardHowTo w-1/2 md:w-auto" data-number="${index + 1}">
+          <h4 class="text-center w-full text-2xl h-[32px] md:h-auto">${
+            stepperTitle[index]
+          }</h4>
+          <div class="w-16 h-[100px] md:w-24 md:h-[200px] flex items-center p-2 m-auto">
+            <img alt="illustration" src="./img/stepper${index}.png">
+          </div>
+        </div>
+      `;
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+      window.scroll(0, 0);
+
+      document.getElementById("xmasButton").addEventListener("click", () => {
+        document.querySelector("body").classList.add("overflow-hidden");
+        document
+          .querySelector("html")
+          .classList.add("loadingOut", "overflow-hidden");
+        setTimeout(() => (window.location.href = "./createSecretSanta"), 1500);
+      });
+    });
+  </script>
+</html>

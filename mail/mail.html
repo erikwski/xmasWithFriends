@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    html{
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        background-color: #f5ede1;
+    }
+    p,h2{
+      font-family: 'Lobster', cursive;
+      color: #e51400;
+    }
+    #container{
+        margin: auto;
+        padding: 15px;
+        text-align: center;
+        border: 10px solid #549445;
+        height: 55%;
+        width: 75%;
+        margin-top: 10%;
+        outline: 10px solid #e51400;
+        outline-offset: -25px;
+    }
+    #header_mail img{
+        width: 150px;
+    }
+    a{
+        color: black;
+        text-decoration: none;
+        padding: 5px 20px 10px 20px;
+        background-color: #77b162;
+        border-radius: 10px;
+        height: max-content;
+        margin-top: 35px;
+    }
+    p{
+      
+      margin-bottom: 0;
+    }
+    #header_mail{
+        width: max-content;
+      margin: auto;
+    }
+
+    #body_mail div{
+      margin-top: 35px;
+      height: max-content;
+    }
+    .img{
+      width: 100%;
+        height: 100%;
+      /* position: absolute; */
+    }
+    #container_img{
+      position: absolute;
+    }
+    @media only screen and (max-width: 400px) {
+      .img_div{
+        display: none;
+      }
+      #container{
+        margin: auto;
+        padding: 0px;
+        text-align: center;
+        border: none;
+        height: 55%;
+        width: 75%;
+        margin-top: 10%;
+        outline: none;
+        outline-offset: 0px;
+      }
+      body{
+        padding: 0;
+      }
+    }
+    @media only screen and (max-width: 700px) {
+      .img_div:nth-of-type(2){
+        display: none;
+      }
+      
+    }
+    @media only screen and (max-width: 1200px) {
+      .img_div:nth-of-type(2){
+        top: 15% !important;
+      }
+    }
+</style>
+<body>
+  <div id="container">
+    <div class="img_div" style="position: absolute; width: 27%;">
+      <img class="img"  src="./fiocco_su.png" alt="">
+    </div>
+    <div class="img_div" style="position: absolute;width: 18%; top: 18%;right: 17%;">
+      <img class="img" src="./timbro.png" alt="">
+    </div>
+    <!-- <div style="position: absolute;width: 30%;">
+      <img style="" class="img" src="./fiocco_giu.png" alt="">
+    </div> -->
+    <div id="container_messaggio">
+      <div id="header_mail">
+        <img src="./secret_santa.png" alt="">
+      </div>
+      <div id="body_mail">
+            <h2>Buon natale</h2>
+            <p>Buongiorno e buon natale ("nome del utente")</p><br>
+            <p>Sei stato invitato a partecipare al secret santa da ("nome di chi l'ha invitato") <br> Clicca per scoprire a chi devi fare il tuo magnifico regalo</p>
+            <div style="padding-bottom: 20px;">
+              <a href="https://it.pornhub.com/">clicca</a>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
