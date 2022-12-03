@@ -80,6 +80,27 @@
     />
   </section>
   <body class="overflow-hidden">
+    <style>
+      h3 {
+        font-size: 3rem;
+      }
+      h4 {
+        font-size: 2rem;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h5 {
+        font-size: 2rem;
+      }
+      .badge,
+      h4 {
+        background: linear-gradient(148deg, #00a94d, #006d33);
+        padding: 10px 10px 3px;
+        border-radius: 1rem;
+        margin-bottom: 20px;
+      }
+    </style>
     <div id="loadingIn">
       <img alt="babbo natale pazzo sgravato" src="../img/loadingImage.png" />
     </div>
@@ -98,15 +119,44 @@
         </a>
       </section>
       <section class="text-center">
-        <h3>CIAO, <span id="player"></span></h3>
+        <h3>
+          CIAO<br class="block md:hidden" />
+          <span id="player" class="badge"></span>
+        </h3>
         <h5>DOVRAI FARE IL REGALO A</h5>
-        <h4 id="receiver"></h4>
+        <div>
+          <h4 id="receiver"></h4>
+        </div>
         <h5>LA CATEGORIA ASSEGNATA É:</h5>
-        <h4 id="category"></h4>
-        <h5>REGOLE PER IL SECRET SANTA:</h5>
-        <ul>
-          <li>BUDGET MASSIMO: <b id="budget"></b></li>
-        </ul>
+        <div>
+          <h4 id="category"></h4>
+        </div>
+        <div
+          class="p-4 mt-4 font-bold"
+          style="background: linear-gradient(60deg, #f8000094, #f8000077)"
+        >
+          <h5>REGOLE PER IL SECRET SANTA:</h5>
+          <ul>
+            <li class="mb-2">BUDGET MASSIMO: <b id="budget"></b></li>
+            <li class="mb-2">
+              SUL PACCHETTO ALL'ESTERNO BISOGNERÁ INSERIRE:
+              <ul class="pl-4">
+                <li class="mt-1" style="text-decoration: underline">
+                  RICEVENTE
+                </li>
+                <li class="mt-1" style="text-decoration: underline">
+                  CATEGORIA
+                </li>
+              </ul>
+            </li>
+            <li class="mb-2">
+              ALL'INTERNO BISOGNERÁ INSERIRE ANCHE UN INDOVINELLO PER FAR
+              INDOVINARE A FINE APERTURA DEI REGALI CHI HA FATTO IL REGALO
+              <br />
+              <i class="mt-1">(es: Sono Andrei, scrivo Rumeno Bastardo)</i>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
     <footer></footer>

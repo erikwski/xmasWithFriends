@@ -16,11 +16,12 @@ setTimeout(() => {
     }, 500);
   }, 1000);
 
-  function QueryString(item, text) {
-    var foundString = text.match(
+  let parameter = window.location.search;
+  function QueryString(item) {
+    var foundString = parameter.match(
       new RegExp("[?&]" + item + "=([^&]*)(&?)", "i")
     );
-    return foundString ? foundString[1] : foundString;
+    return decodeURIComponent(foundString ? foundString[1] : foundString);
   }
   let dati = {
     player: QueryString("name"),
@@ -30,7 +31,7 @@ setTimeout(() => {
   };
   Object.keys(dati).forEach((kk) => {
     try {
-      document.getElementById(key).innerHTML = dati[kk];
+      document.getElementById(kk).innerHTML = dati[kk];
     } catch (error) {
       console.error(error);
     }
