@@ -143,7 +143,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "UN REGALO UTILE",
         "ECOSOSTENIBILITÁ",
         "APPARENTEMENTE COSTOSO MA ECONOMICO",
-        "GRATTA&VINCI",
+        "LUDOPATIA",
+        "OGGETTO CUTIE",
       ];
       if (document.querySelectorAll(".correctUser").length >= 2) {
         //valido
