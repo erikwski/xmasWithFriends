@@ -155,7 +155,19 @@ document.addEventListener("DOMContentLoaded", function () {
             email: pp.querySelector("[name='email']").value,
           });
         });
-        console.log(players);
+        $.post("https://amazonscrape-izsdosftgq-ey.a.run.app/SecretSanta/", {
+          players: players,
+        })
+          .done((res) => {
+            if (res.status) {
+              alert("GRUPPO CREATO CORRETTAMENTE");
+            } else {
+              alert("ERRORE NELLA CREAZIONE");
+            }
+          })
+          .catch(() => {
+            alert("Contatta la fottuta amministrazione");
+          });
       } else {
         alert("COMPILA CORRETTAMENTE I CAMPI");
       }
