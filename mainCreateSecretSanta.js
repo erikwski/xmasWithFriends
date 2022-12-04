@@ -155,11 +155,10 @@ document.addEventListener("DOMContentLoaded", function () {
             email: pp.querySelector("[name='email']").value,
           });
         });
-        fetch("https://amazonscrape-izsdosftgq-ey.a.run.app/SecretSanta/", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ players: players }),
-        })
+        axios
+          .post("https://amazonscrape-izsdosftgq-ey.a.run.app/SecretSanta/", {
+            players: players,
+          })
           .then((res) => {
             if (res.status) {
               alert("GRUPPO CREATO CORRETTAMENTE");
