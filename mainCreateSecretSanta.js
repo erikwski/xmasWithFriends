@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
             email: pp.querySelector("[name='email']").value,
           });
         });
-        fetch("/post/data/here", {
+        fetch("https://amazonscrape-izsdosftgq-ey.a.run.app/SecretSanta/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ players: players }),
